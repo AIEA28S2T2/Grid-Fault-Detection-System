@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Grid Fault Detection</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="hamburger" onclick="toggleSidebar()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div><img src="logo.png" ></div>
+      <h1 class="nav-title">Fault Detection in Smart Grid</h1>
+      <div class="current-page">Introduction</div>
+      <div class="nav-controls">
+        <div class="nav-button">
+          <a href="#" onclick="previousPage(); return false;">
+            Previous
+            <span class="tooltip">Go to previous page</span>
+          </a>
+        </div>
+        <div class="nav-button">
+          <a href="#" onclick="nextPage(); return false;">
+            Next
+            <span class="tooltip">Go to next page</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-content">
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="#" onclick="changePage('topic.html'); return false;">Topic</a></li>
+          <li><a href="#" onclick="changePage('intro.html'); return false;">Introduction</a></li>
+          <li><a href="#" onclick="changePage('problem.html'); return false;">Problem Statement</a></li>
+          <li><a href="#" onclick="changePage('literature.html'); return false;">Literature Review</a></li>
+          <li><a href="#" onclick="changePage('objective.html'); return false;">Objectives</a></li>
+          <li><a href="#" onclick="changePage('methodolgy.html'); return false;">Methodology</a></li>
+          <li><a href="#" onclick="changePage('research.html'); return false;">Research Gap</a></li>
+          <li><a href="#" onclick="changePage('https://www.kaggle.com/datasets/esathyaprakash/electrical-fault-detection-and-classification'); return false;">Dataset</a></li>
+          <li><a href="#" onclick="changePage('reference.html'); return false;">References</a></li>
+        </ul>
+
+        <h2 class="group-members-title">Group Members</h2>
+        <ul class="group-members">
+          <li>Niranjan S -CB.SC.U4AIE24046</li>
+          <li>Prajit T -CB.SC.U4AIE24062</li>
+          <li>Deeksha P -CB.SC.U4AIE24015</li>
+          <li>Don Arun -CB.SC.U4AIE24016</li>
+        </ul>
+      </div>
+    </div>
+
+    <main>
+      <div class="content">
+        <iframe id="content-frame" src="intro.html" frameborder="0"></iframe>
+      </div>
+    </main>
+
+    <script>
+      const pages = [
+        'topic.html',
+        'intro.html',
+        'problem.html',
+        'literature.html',
+        'objective.html',
+        'methodolgy.html',
+        'research.html',
+        'https://www.kaggle.com/datasets/esathyaprakash/electrical-fault-detection-and-classification',
+        'reference.html'
+      ];
+      const pageTitles = [
+        'Topic',
+        'Introduction',
+        'Problem Statement',
+        'Literature Review',
+        'Objectives',
+        'Methodology',
+        'Research Gap',
+        'Dataset',
+        'References'
+      ];
+      let currentPageIndex = 0;
+
+      function toggleSidebar() {
+        document.getElementById('sidebar').classList.toggle('active');
+        document.body.classList.toggle('sidebar-open');
+      }
+
+      function updatePageTitle() {
+        document.querySelector('.current-page').textContent = pageTitles[currentPageIndex];
+      }
+
+      function changePage(url) {
+        document.getElementById('content-frame').src = url;
+        currentPageIndex = pages.indexOf(url);
+        updatePageTitle();
+        if (document.getElementById('sidebar').classList.contains('active')) {
+          toggleSidebar();
+        }
+      }
+
+      function nextPage() {
+        currentPageIndex = (currentPageIndex + 1) % pages.length;
+        document.getElementById('content-frame').src = pages[currentPageIndex];
+        updatePageTitle();
+      }
+
+      function previousPage() {
+        currentPageIndex = (currentPageIndex - 1 + pages.length) % pages.length;
+        document.getElementById('content-frame').src = pages[currentPageIndex];
+        updatePageTitle();
+      }
+    </script>
+  </body>
+</html>

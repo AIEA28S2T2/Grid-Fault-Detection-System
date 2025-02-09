@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #333333;
+            color: #efefef;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Methodology</h1>
+    <div> SVM(Support Vector Machine)
+        <ul>
+            <li>Support Vector Machine (SVM) is a powerful machine learning algorithm that helps in classifying data into different categories based on the features of the data.</li>
+            <li>In the context of power supply fault detection, SVM works by creating an imaginary line or boundary that best separates normal system behavior from faulty conditions.</li>
+            <li>The SVM algorithm looks at data such as voltage, current, and frequency measurements to draw this boundary and determine whether the system is operating normally or experiencing a fault. This technique is effective for detecting faults in complex systems because it can handle data with multiple features and accurately classify even subtle faults that may not be easily visible.</li>
+           <li>SVM is particularly beneficial when the data has clear separations between normal and faulty states, but it requires the right choice of features and good training data. Once trained on enough examples, SVM can quickly classify new data into either normal or faulty categories. </li>
+        <li>However, it can struggle with noisy data or when there is not enough separation between the categories, and it may require fine-tuning of its parameters to improve performance. Overall, SVM is useful in fault detection tasks where you need to separate data into distinct classes with high accuracy.</li>
+         </ul>
+         </div>
+    <div> K-Nearest Neighbors (KNN)
+        <ul>
+            <li>K-Nearest Neighbors (KNN) is a simpler and more intuitive machine learning algorithm used for classifying data points based on their similarity to nearby data. When applied to fault detection in power systems, KNN compares new data (like voltage or current readings) with historical data that is already labeled as "normal" or "faulty." It then classifies the new data based on how similar it is to the closest examples in the training set</li>
+            <li>The algorithm checks the "neighbors" of the new data and assigns the most common label (either normal or faulty) from the closest data points. KNN is easy to implement and can quickly detect faults when the system behaves similarly to past fault patterns.</li>
+            <li>However, KNN does have some limitations. It can become computationally expensive as the amount of data grows, as it needs to compare the new data to all previous data points. Additionally, KNN can be sensitive to irrelevant or redundant features, making it necessary to carefully select the most important measurements.</li>
+            <li>Despite these challenges, KNN is often used for real-time fault detection due to its simplicity and ability to handle varying types of data without the need for complex training processes.</li>
+
+        </ul>
+        </div>
+        <div>Random Forest
+        <ul>
+            <li>Random Forest is an ensemble machine learning technique that combines multiple decision trees to improve prediction accuracy. In fault detection for power supply systems, Random Forest builds many decision trees, each one trained on different subsets of the data, and then aggregates the results from all these trees to make a final decision</li>
+            <li>This "voting" process helps ensure that the algorithm is not overly influenced by any one tree, reducing the risk of errors or overfitting that can occur with a single decision tree.</li>
+            <li>Random Forest is effective in handling large datasets with complex patterns, making it a robust option for detecting faults in power systems where multiple factors contribute to the overall condition.</li>
+            <li>The main advantage of Random Forest is its ability to provide accurate predictions even when dealing with noisy or incomplete data. It works well with both small and large datasets, and because it uses multiple decision trees, it can make better decisions by averaging the results.</li>
+            <li>Random Forest is also flexible and can handle various types of data, making it a powerful tool for fault detection in power supply systems. However, it can be slower compared to simpler algorithms like KNN because of the need to process multiple trees, and it can be more difficult to interpret due to its complexity.</li>
+            <li>Despite these challenges, Random Forest's ability to improve prediction accuracy makes it highly valuable in identifying faults in real-time power systems.</li>
+        </ul> 
+    </div>
+</body>
+</html>
