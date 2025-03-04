@@ -1,2 +1,2 @@
-# webpage
-EEE UID Project website
+# Contains both the website and the MATLAB, Simulink program & models
+
